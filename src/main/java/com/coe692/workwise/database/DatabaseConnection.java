@@ -1,8 +1,8 @@
-package com.coe692.workwise.data;
+package com.coe692.workwise.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import io.github.cdimascio.dotenv.Dotenv;
+
 public class DatabaseConnection {
     private static DatabaseConnection instance;
     private Connection connection;
@@ -10,10 +10,9 @@ public class DatabaseConnection {
     private DatabaseConnection() {
 
         try {
-            Dotenv dotenv = Dotenv.load();
-            String URL = dotenv.get("DATABASE_URL");
-            String USERNAME = dotenv.get("DATABASE_USERNAME");
-            String PASSWORD = dotenv.get("DATABASE_PASSWORD");
+            String URL = System.getenv("DATABASE_URL");
+            String USERNAME = System.getenv("DATABASE_USERNAME");
+            String PASSWORD = System.getenv("DATABASE_PASSWORD");
 
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (Exception e) {
