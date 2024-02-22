@@ -1,4 +1,4 @@
-package com.coe692.workwise.servlet;
+package com.coe692.workwise.api;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.JSONObject;
 
-@WebServlet(name = "HealthServlet", urlPatterns = {"/Health"})
-public class HealthServlet extends HttpServlet {
+@WebServlet(name = "CallbackServlet", urlPatterns = {"/api/callback"})
+public class CallbackServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
