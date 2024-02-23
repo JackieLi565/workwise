@@ -19,7 +19,7 @@ public class DatabaseConnection {
             e.printStackTrace();
         }
     }
-    public static DatabaseConnection getInstance() {
+    public static Connection getInstance() {
         if (instance == null) {
             synchronized (DatabaseConnection.class) {
                 if (instance == null) {
@@ -27,10 +27,6 @@ public class DatabaseConnection {
                 }
             }
         }
-        return instance;
-    }
-
-    public Connection getConnection() {
-        return connection;
+        return instance.connection;
     }
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<%@ page import="com.coe692.workwise.utils.ConcentURL" %>
+<%@ page import="com.coe692.workwise.utils.OAuth" %>
+<%@ page import="java.util.Optional" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@
 </head>
 <body class="flex justify-center items-center h-screen">
 
-<a href="<%= ConcentURL.URL() %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login with Google</a>
+<a href="<%= OAuth.getClientRequestURL(Optional.empty()) %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Login with Google</a>
 </body>
 </html>
 
