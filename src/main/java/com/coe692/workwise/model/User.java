@@ -17,7 +17,16 @@ public class User {
         this.middleName = String.valueOf(middleName);
     }
 
+    //Just temporary when @jackie figures out how to hash and de hash which I think has more to do with html
+    public User(String email, String password, String firstname, String lastname) {
+        this.email = email;
+        this.password = password; // hash password in the future
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public String getPassword() {
+
         return this.password; // de-hash password in future iterations of project
     }
 }
