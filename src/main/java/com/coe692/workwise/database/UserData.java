@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class UserData {
-    public static void displayUsers() {
+    public static void retriveUserList() {
         ArrayList<User> userList = new ArrayList<>();
         Connection con = DatabaseConnection.getInstance();
         String selectUsersQuery = "SELECT * FROM user";

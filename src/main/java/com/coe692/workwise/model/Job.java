@@ -1,6 +1,6 @@
 package com.coe692.workwise.model;
 
-public class Jobs {
+public class Job {
     private String title;
     private String description;
     private String location;
@@ -8,9 +8,9 @@ public class Jobs {
     private Double pay;
     private String date;
     private int interaction;
-    private String recruiter_ID;
+    private String recruiter;
 
-    public Jobs(String title, String description, String location, String company, Double pay, String date, int interaction, String recruiter_ID) {
+    public Job(String title, String description, String location, String company, Double pay, String date, int interaction, String recruiter) {
         this.title = title;
         this.description = description;
         this.location = location;
@@ -18,7 +18,7 @@ public class Jobs {
         this.pay = pay;
         this.date = date;
         this.interaction = interaction;
-        this.recruiter_ID = recruiter_ID;
+        this.recruiter = recruiter;
     }
 
     public String getTitle() {
@@ -77,11 +77,11 @@ public class Jobs {
         this.interaction = interaction;
     }
 
-    public String getRecruiter_ID() {
-        return recruiter_ID;
+    public String getRecruiter() {
+        return recruiter;
     }
 
-    public void setRecruiter_ID(String recruiter_ID) {
-        this.recruiter_ID = recruiter_ID;
+    public void setRecruiter(String recruiter) {
+        this.recruiter = recruiter;
     }
 }
