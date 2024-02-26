@@ -31,9 +31,7 @@ public class JobData {
                 jobList.add(new Job(title, description, location, company, wage, dateobj.toString(),views, recruiter ));
             }
         } catch (SQLException e) {
-            // Log the exception or throw a custom exception
             e.printStackTrace();
-            // throw new CustomDatabaseException("Failed to retrieve users from the database", e);
         }
     }
 }

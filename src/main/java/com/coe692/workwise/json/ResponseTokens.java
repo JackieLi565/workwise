@@ -1,4 +1,4 @@
-package com.coe692.workwise.model;
+package com.coe692.workwise.json;
 
 public class ResponseTokens {
     private String access_token;
