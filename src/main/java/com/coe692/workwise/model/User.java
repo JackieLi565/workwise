@@ -3,24 +3,31 @@ package com.coe692.workwise.model;
 import java.util.Optional;
 
 public class User {
+    public String id;
     public String email;
     private String password;
     public String firstName;
     public String lastName;
     public String middleName;
 
-    public User(String email, Optional<String> password, String firstName, String lastName, Optional<String> middleName) {
+    public User(String id, String email, String password, String firstName, String lastName, String middleName) {
+        this.id = id;
         this.email = email;
-        this.password = String.valueOf(password); // hash password in the future
+        this.password = password; // hash password in the future
         this.firstName = firstName;
         this.lastName = lastName;
-        this.middleName = String.valueOf(middleName);
+        this.middleName = middleName;
     }
 
-    //Just temporary when @jackie figures out how to hash and de hash which I think has more to do with html
     public User(String email, String password, String firstname, String lastname) {
         this.email = email;
         this.password = password; // hash password in the future
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public User(String email, String firstname, String lastname) {
+        this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
     }

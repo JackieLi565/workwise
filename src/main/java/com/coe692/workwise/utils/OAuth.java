@@ -1,6 +1,6 @@
 package com.coe692.workwise.utils;
 
-import com.coe692.workwise.model.ResponseTokens;
+import com.coe692.workwise.json.ResponseTokens;
 import com.google.api.client.auth.oauth2.AuthorizationCodeTokenRequest;
 import com.google.api.client.auth.oauth2.AuthorizationRequestUrl;
 import com.google.api.client.auth.oauth2.TokenResponse;
