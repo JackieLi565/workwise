@@ -13,7 +13,7 @@ public class DatabaseConnection {
             String URL = System.getenv("DATABASE_URL");
             String USERNAME = System.getenv("DATABASE_USERNAME");
             String PASSWORD = System.getenv("DATABASE_PASSWORD");
-
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (Exception e) {
             e.printStackTrace();

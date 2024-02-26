@@ -28,7 +28,7 @@ public class CallbackServlet extends HttpServlet {
             DecodedJWT jwt = JWT.decode(accessToken.getId_token());
             String email = jwt.getClaim("email").asString();
             response.setStatus(302);
-            response.sendRedirect("home.jsp");
+            response.sendRedirect("jobs.jsp");
         } catch (Exception e) {
             if (e instanceof IOException) {
                 response.sendRedirect("/error.jsp");
