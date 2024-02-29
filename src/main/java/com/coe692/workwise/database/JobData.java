@@ -6,13 +6,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JobData {
 
-    public static ArrayList<Job> retrieveJobList() {
-        ArrayList<Job> jobList = new ArrayList<>();
+    public static Map<String, Job> retrieveJobList() {
+        Map<String, Job> jobMap = new HashMap<>();
         Connection con = DatabaseConnection.getInstance();
         String selectUsersQuery = "SELECT * FROM job";
         try (PreparedStatement preparedStatement = con.prepareStatement(selectUsersQuery);
@@ -27,11 +28,11 @@ public class JobData {
                 Date dateobj = resultSet.getDate("date_posted");
                 Double wage = resultSet.getDouble("hourly_wage");
                 int views = resultSet.getInt("interaction");
-                jobList.add(new Job(id , title, description, location, company, wage, dateobj.toString(),views, recruiter ));
+                jobMap.put(id, new Job(id , title, description, location, company, wage, dateobj.toString(),views, recruiter));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return jobList;
+        return jobMap;
     }
 }

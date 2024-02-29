@@ -9,9 +9,11 @@ import java.io.IOException;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.coe692.workwise.database.UserData;
+import com.coe692.workwise.database.CandidateData;
 import com.coe692.workwise.json.ResponseTokens;
 import com.coe692.workwise.exception.NoDataException;
+import com.coe692.workwise.model.Candidate;
+import com.coe692.workwise.model.GoogleProvider;
 import com.coe692.workwise.utils.OAuth;
 
 @WebServlet(name = "CallbackServlet", urlPatterns = {"/callback"})
@@ -29,8 +31,7 @@ public class CallbackServlet extends HttpServlet {
 
             DecodedJWT jwt = JWT.decode(accessToken.getId_token());
             String email = jwt.getClaim("email").asString();
-
-            UserData.getUserByEmail(email);
+            Candidate candidate = CandidateData.getCandidateByEmail(email, new GoogleProvider(jwt));
             response.sendRedirect("jobs.jsp");
         } catch (Exception e) {
             if (e instanceof NoDataException) {
