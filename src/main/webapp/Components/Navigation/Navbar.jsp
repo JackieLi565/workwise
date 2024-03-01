@@ -5,8 +5,10 @@
     </a>
     <div class="flex gap-6 justify-between items-center text-text">
         <a>Saved Jobs</a>
+        <a>My Profile</a>
+
         <div class="p-2 flex gap-2 justify-center items-center">
-            <a>My Profile</a>
+            <a href="/">Logout</a>
             <img src="">
         </div>
     </div>

@@ -32,18 +32,18 @@
                     Job selectedJob = jobMap.get(jobId);
 
                 %>
-                <div class="flex flex-col gap-4 <% if (selectedJob == null) {%> w-full <%} else {%> w-[45%] <%}%> h-[5000px]">
+                <div class="flex flex-col gap-4 <% if (selectedJob == null) {%> w-full <%} else {%> w-[45%] <%}%> mb-10">
                     <% for (Map.Entry<String, Job> set : jobMap.entrySet()) {
                         Job job = set.getValue();
                     %>
                     <a href="/jobs.jsp?<%=set.getKey()%>" class="block bg-white shadow-md rounded-lg p-4">
                         <div class="flex justify-between">
-                            <h1 class="text-xl font-semibold <% if (job.getId().equals(jobId)) {%> text-accent <%}%>"><%= job.getTitle() %></h1>
+                            <h1 class="text-xl font-semibold <% if (job.id.equals(jobId)) {%> text-accent <%}%>"><%= job.title %></h1>
                         </div>
-                        <div class="text-gray-800"><%= job.getDescription() %></div>
+                        <div class="text-gray-800"><%= job.description %></div>
                         <div class="flex justify-between items-center pt-2">
-                            <div class="text-gray-600">Pay: <%= job.getPay() %> / hour</div>
-                            <div class="text-gray-600"><%= job.getLocation() %></div>
+                            <div class="text-gray-600">Pay: <%= job.pay %> / hour</div>
+                            <div class="text-gray-600"><%= job.location %></div>
                         </div>
                     </a>
                     <% } %>
@@ -53,8 +53,11 @@
 
                 %>
                     <div class="sticky bg-white top-5 h-fit w-[55%] border border-white rounded-md p-5">
-
-
+                        <h1><%=selectedJob.title%></h1>
+                        <p><%=selectedJob.description%></p>
+                        <div class="w-full text-right">
+                            <a class="rounded-md block px-4 py-1 bg-accent text-text">Apply</a>
+                        </div>
                     </div>
                 <%
                     }
