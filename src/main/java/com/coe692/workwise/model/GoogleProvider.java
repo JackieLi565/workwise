@@ -1,14 +1,18 @@
 package com.coe692.workwise.model;
 
-import com.auth0.jwt.interfaces.DecodedJWT;
-
 public class GoogleProvider implements Provider{
-    private final DecodedJWT jwt;
-    public GoogleProvider(DecodedJWT jwt) {
-        this.jwt = jwt;
+    private String email;
+
+    public GoogleProvider(String email) {
+        this.email = email;
     }
     @Override
     public String getEmail() {
-        return jwt.getClaim("email").asString();
+        return this.email;
+    }
+
+    @Override
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

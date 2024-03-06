@@ -8,7 +8,7 @@
         <a>My Profile</a>
 
         <div class="p-2 flex gap-2 justify-center items-center">
-            <a href="/">Logout</a>
+            <a href="/api/logout">Logout</a>
             <img src="">
         </div>
     </div>

@@ -1,4 +1,4 @@
-package com.coe692.workwise.database;
+package com.coe692.workwise.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

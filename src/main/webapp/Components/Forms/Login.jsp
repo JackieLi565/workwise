@@ -15,7 +15,7 @@
             <a href="#" class="text-accent">Forgot password?</a>
         </div>
 
-        <button disabled type="submit" class="w-full py-2 px-4 bg-background text-white rounded-md hover:bg-secondary transition-colors focus:outline-none">Sign in</button>
+        <button disabled type="submit" class="w-full py-2 px-4 bg-background text-text rounded-md hover:bg-secondary transition-colors focus:outline-none">Sign in</button>
 
     </form>
     <div class="text-center text-sm text-gray-500 my-2">or</div>

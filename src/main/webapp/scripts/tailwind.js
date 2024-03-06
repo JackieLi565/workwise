@@ -9,5 +9,8 @@ tailwind.config = {
                 'accent': '#3bc3d8',       // Accent color - a bright bluish-cyan
             }
         }
-    }
+    },
+    plugins: [
+        require('@tailwindcss/line-clamp'),
+    ],
 }
