@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WorkWise Login</title>
+    <title>WorkWise | Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="/scripts/tailwind.js"></script>
 </head>
@@ -19,18 +19,7 @@
             <p class="text-sm text-text">New to WorkWise? <a href="/register" class="text-accent">Join now</a></p>
         </div>
     </main>
-    <footer class="h-16 bg-primary flex items-center justify-center gap-5 text-sm text-background">
-        <p>
-            WorkWise © 2024
-        </p>
-        <a>User Agreement</a>
-        <a>Privacy Policy</a>
-        <a>Community Guidelines</a>
-        <a>Cookie Policy</a>
-        <a>Copyright Policy</a>
-        <a>Feedback</a>
-        <a>Support</a>
-    </footer>
+    <%@include file="Components/Navigation/Footer.jsp"%>
 </body>
 </html>
 

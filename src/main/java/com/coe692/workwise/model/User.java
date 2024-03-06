@@ -1,23 +1,58 @@
 package com.coe692.workwise.model;
 
-import java.util.Optional;
-
 public class User {
-    public String email;
-    private String password;
-    public String firstName;
-    public String lastName;
-    public String middleName;
+    protected String id;
+    protected Provider provider;
+    protected String firstName;
+    protected String lastName;
+    protected String image;
 
-    public User(String email, Optional<String> password, String firstName, String lastName, Optional<String> middleName) {
-        this.email = email;
-        this.password = String.valueOf(password); // hash password in the future
+    public User(String id, Provider provider, String firstName, String lastName, String image) {
+        this.id = id;
+        this.provider = provider;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.middleName = String.valueOf(middleName);
+        this.image = image;
     }
 
-    public String getPassword() {
-        return this.password; // de-hash password in future iterations of project
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(Provider provider) {
+        this.provider = provider;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
+
