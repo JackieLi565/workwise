@@ -4,7 +4,6 @@ import com.workwise.jobservice.common.DatabaseConnection;
 import com.workwise.jobservice.model.Job;
 import com.workwise.jobservice.model.Recruiter;
 
-import javax.swing.text.html.parser.Entity;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,9 +12,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetJob implements DAO<Job>{
+public class JobRepository implements DAO<Job>{
     private final Connection conn;
-    public GetJob(){
+    public JobRepository(){
         conn = DatabaseConnection.getInstance();
     }
     @Override
@@ -45,7 +44,7 @@ public class GetJob implements DAO<Job>{
     @Override
     public Map<String, Job> findAll() throws SQLException {
         Map<String, Job> jobMap = new HashMap<>();
-        String selectUsersQuery = "SELECT * FROM job j INNER JOIN recruiter r ON j.FK_recruiter = r.recruiter_id";
+        String selectUsersQuery = "SELECT * FROM recruiter r INNER JOIN user u  ON r.FK_user = u.user_id INNER JOIN job j ON j.FK_recruiter = r.recruiter_id";
         PreparedStatement ps = this.conn.prepareStatement(selectUsersQuery);
         ResultSet rs = ps.executeQuery();
 
@@ -63,7 +62,6 @@ public class GetJob implements DAO<Job>{
             String lastname = rs.getString("l_name");
             String image = rs.getString("image");
             String company = rs.getString("r.company");
-
             Recruiter r = new Recruiter(recruiterId,firstname,lastname,image,company);
             Job j = new Job(r, id , title, description, location, wage, dateobj.toString(), url, views);
             jobMap.put(id, j);
@@ -80,7 +78,7 @@ public class GetJob implements DAO<Job>{
         String location = entity.getLocation();
         String company = entity.getCompany();;
         String url = entity.getUrl();
-        String date = String.valueOf(Date.parse(entity.getDate()));
+        String date = String.valueOf(entity.getDate());
         Double wage = entity.getPay();
         int views = entity.getInteraction();
 
@@ -101,7 +99,7 @@ public class GetJob implements DAO<Job>{
     }
 
     @Override
-    public void update(Job entity) throws SQLException {
+    public void update(Job entity) throws SQLException { //Similar to insert
 
     }
 }
