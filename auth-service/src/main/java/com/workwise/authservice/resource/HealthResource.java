@@ -1,4 +1,4 @@
-package com.workwise.jobservice.resource;
+package com.workwise.authservice.resource;
 
 import javax.ws.rs.*;
 

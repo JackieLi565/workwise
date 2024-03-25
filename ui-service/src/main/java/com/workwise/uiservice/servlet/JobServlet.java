@@ -9,11 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet(name = "JobsServlet", urlPatterns = {"/jobs"})
-public class JobsServlet extends HttpServlet {
+public class JobServlet extends HttpServlet {
 
     @Override
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/jobs.jsp");
         dispatcher.forward(request, response);
     }
 }
+

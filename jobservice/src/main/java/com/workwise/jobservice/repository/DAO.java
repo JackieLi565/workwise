@@ -7,6 +7,6 @@ public interface DAO<T> {
     T findById(String id) throws SQLException;
     Map<String, T> findAll() throws SQLException;
     void insert(T entity) throws SQLException;
-    void delete(T entity) throws SQLException;
+    void delete(String id) throws SQLException;
     void update(T entity) throws SQLException;
 }

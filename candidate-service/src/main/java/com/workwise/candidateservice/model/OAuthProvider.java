@@ -1,14 +1,21 @@
 package com.workwise.candidateservice.model;
 
-class OAuthProvider implements Provider {
+public class OAuthProvider implements Provider {
     private String email;
+    private final String name = "oauth";
 
     public OAuthProvider(String email) {
         this.email = email;
     }
+
     @Override
     public String getEmail() {
         return this.email;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 
     @Override

@@ -5,9 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.workwise</groupId>
-  <artifactId>candidate-service</artifactId>
+  <artifactId>auth-service</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>candidate-service</name>
+  <name>auth-service</name>
   <packaging>war</packaging>
 
   <properties>
@@ -35,6 +35,31 @@
       <version>1.19</version>
     </dependency>
     <dependency>
+      <groupId>com.auth0</groupId>
+      <artifactId>java-jwt</artifactId>
+      <version>4.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.oauth-client</groupId>
+      <artifactId>google-oauth-client</artifactId>
+      <version>1.31.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.10.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+      <artifactId>okhttp</artifactId>
+      <version>4.9.0</version> <!-- Use the latest version -->
+    </dependency>
+    <dependency>
+      <groupId>com.google.http-client</groupId>
+      <artifactId>google-http-client-gson</artifactId>
+      <version>1.43.3</version>
+    </dependency>
+    <dependency>
       <groupId>com.sun.jersey</groupId>
       <artifactId>jersey-servlet</artifactId>
       <version>1.19</version>
@@ -44,12 +69,7 @@
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.28</version>
     </dependency>
-    <dependency>
-      <groupId>com.google.code.gson</groupId>
-      <artifactId>gson</artifactId>
-      <version>2.10.1</version>
-    </dependency>
-    </dependencies>
+  </dependencies>
 
   <build>
     <plugins>

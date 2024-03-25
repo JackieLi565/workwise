@@ -1,7 +1,7 @@
 <web-app>
   <filter>
     <filter-name>AuthorizationFilter</filter-name>
-    <filter-class>com.coe692.workwise.filter.AuthorizationFilter</filter-class>
+    <filter-class>com.workwise.uiservice.filter.AuthorizationFilter</filter-class>
   </filter>
 
   <filter-mapping>

@@ -7,7 +7,7 @@ public class User {
     protected String lastName;
     protected String image;
 
-    public User(String id, Provider provider, String firstName, String lastName, String image) {
+    public User(Provider provider, String id, String firstName, String lastName, String image) {
         this.id = id;
         this.provider = provider;
         this.firstName = firstName;

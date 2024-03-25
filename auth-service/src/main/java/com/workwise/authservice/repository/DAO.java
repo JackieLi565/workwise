@@ -1,4 +1,4 @@
-package com.workwise.candidateservice.repository;
+package com.workwise.authservice.repository;
 
 import java.sql.SQLException;
 import java.util.Map;
