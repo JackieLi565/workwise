@@ -1,0 +1,11 @@
+<web-app>
+  <filter>
+    <filter-name>AuthorizationFilter</filter-name>
+    <filter-class>com.workwise.uiservice.filter.AuthorizationFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AuthorizationFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>
