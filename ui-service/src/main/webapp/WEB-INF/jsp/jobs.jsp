@@ -17,20 +17,20 @@
         <div class="flex-1 relative">
             <div class="flex flex-col justify-center items-center">
                 <div class="flex items-center justify-center pt-10 pb-6">
-                    <div class="flex rounded">
-                        <input type="text" class="px-4 py-2 w-80 outline-none rounded-l" placeholder="Job title, keywords, or company">
-                        <input type="text" class="px-4 py-2 w-80 outline-none" placeholder="City, province, or 'remote'">
-                        <button class="px-8 rounded-r bg-accent text-white font-bold p-4">
+                    <form action="/jobs" class="flex rounded">
+                        <input type="text" name="title" class="px-4 py-2 w-80 outline-none rounded-l" placeholder="Job title, keywords, or company">
+                        <input type="text" name="loc" class="px-4 py-2 w-80 outline-none" placeholder="City, province, or 'remote'">
+                        <button type="submit" class="px-8 rounded-r bg-accent text-white font-bold p-4">
                             Find jobs
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
             <div class="flex gap-4 m-auto max-w-6xl">
                 <%
                     Map<String, Job> jobMap = null;
                     try {
-                        Optional<Map<String, Job>> jobsOptional = JobService.getJobs();
+                        Optional<Map<String, Job>> jobsOptional = JobService.getJobs(request.getParameter("title"), request.getParameter("loc"));
                         if (jobsOptional.isPresent()) {
                             jobMap = jobsOptional.get();
                         } else {
@@ -39,14 +39,14 @@
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
-                    String jobId = request.getQueryString();
+                    String jobId = request.getParameter("id");
                     Job selectedJob = jobMap.get(jobId);
                 %>
                 <div class="flex flex-col gap-4 <% if (selectedJob == null) {%> w-full <%} else {%> w-[45%] <%}%> mb-10">
                     <% for (Map.Entry<String, Job> set : jobMap.entrySet()) {
                         Job job = set.getValue();
                     %>
-                    <a href="/jobs?<%=set.getKey()%>" class="block bg-white shadow-md rounded-lg p-4">
+                    <a href="/jobs?id=<%=set.getKey()%>" class="block bg-white shadow-md rounded-lg p-4">
                         <h1 class="text-xl font-semibold mb-1 <% if (job.getId().equals(jobId)) {%> text-accent <%}%>"><%= job.getTitle() %></h1>
                         <div class="text-gray-600"><%= job.getCompany() %></div>
                         <div><%= job.getLocation() %></div>
@@ -89,7 +89,8 @@
                     }
                 %>
             </div>
-            <%@include file="../../components/navigation/footer.jsp"%>
         </div>
+        <%@include file="../../components/navigation/footer.jsp"%>
+
     </body>
 </html>

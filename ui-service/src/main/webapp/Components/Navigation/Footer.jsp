@@ -1,4 +1,4 @@
-<footer class="h-16 bg-primary flex items-center justify-center gap-5 text-sm text-background">
+<footer class="py-8 bg-primary flex items-center justify-center gap-5 text-sm text-background">
     <p>
         WorkWise © 2024
     </p>
